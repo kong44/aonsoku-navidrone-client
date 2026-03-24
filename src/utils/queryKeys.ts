@@ -40,7 +40,10 @@ const radio = {
 
 const search = 'search-key'
 
-const genre = 'get-all-genres'
+const genre = {
+  all: 'get-all-genres',
+  albums: 'get-genre-random-albums',
+}
 
 const update = {
   serverInfo: 'get-server-info',
