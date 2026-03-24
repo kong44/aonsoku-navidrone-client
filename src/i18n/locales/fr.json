@@ -136,7 +136,8 @@
     "library": "Bibliothèque",
     "artists": "Artistes",
     "emptyPlaylist": "Aucune liste de lecture créée",
-    "podcasts": "Podcasts"
+    "podcasts": "Podcasts",
+    "genres": "Genres"
   },
   "menu": {
     "serverLogout": "Se déconnecter",
@@ -760,6 +761,17 @@
       "success": "La mise à jour a été installée ! L'application va redémarrer.",
       "started": "La mise à jour a commencé.",
       "error": "L'installation de la mise à jour a échoué. Veuillez la télécharger directement depuis GitHub."
+    }
+  },
+  "genre": {
+    "headline": "Genre"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} album",
+    "albumCount_other": "{{count}} albums",
+    "buttons": {
+      "shuffleTracks": "Pistes aléatoires",
+      "shuffleAlbums": "Albums aléatoires"
     }
   }
 }

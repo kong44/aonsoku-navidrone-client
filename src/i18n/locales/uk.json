@@ -52,7 +52,8 @@
     "playlists": "Списки відтворення",
     "radios": "Радіо",
     "podcasts": "Подкасти",
-    "emptyPlaylist": "Ще не було створено жодного списку відтворення"
+    "emptyPlaylist": "Ще не було створено жодного списку відтворення",
+    "genres": "Жанри"
   },
   "menu": {
     "server": "Сервер",
@@ -81,5 +82,18 @@
     "nuclear-dark": "Атомні сутінки",
     "achiever": "Achiever",
     "dracula": "Dracula"
+  },
+  "genre": {
+    "headline": "Жанр"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} альбом",
+    "albumCount_few": "{{count}} альбоми",
+    "albumCount_many": "{{count}} альбомів",
+    "albumCount_other": "{{count}} альбомів",
+    "buttons": {
+      "shuffleTracks": "Перемішати треки",
+      "shuffleAlbums": "Перемішати альбоми"
+    }
   }
 }

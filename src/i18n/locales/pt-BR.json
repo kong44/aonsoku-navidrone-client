@@ -17,7 +17,8 @@
     "playlists": "Playlists",
     "radios": "Rádios",
     "podcasts": "Podcasts",
-    "emptyPlaylist": "Nenhuma playlist criada ainda"
+    "emptyPlaylist": "Nenhuma playlist criada ainda",
+    "genres": "Gêneros"
   },
   "menu": {
     "language": "Linguagem",
@@ -782,6 +783,17 @@
       "MM": "%d meses",
       "y": "1 ano",
       "yy": "%d anos"
+    }
+  },
+  "genre": {
+    "headline": "Gênero"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} álbum",
+    "albumCount_other": "{{count}} álbuns",
+    "buttons": {
+      "shuffleTracks": "Faixas aleatórias",
+      "shuffleAlbums": "Álbuns aleatórios"
     }
   }
 }

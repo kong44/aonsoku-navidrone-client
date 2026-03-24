@@ -10,7 +10,8 @@
     "playlists": "Spellista",
     "songs": "Sånger",
     "emptyPlaylist": "Inga spellistor skapat ännu",
-    "library": "Bibliotek"
+    "library": "Bibliotek",
+    "genres": "Genrer"
   },
   "home": {
     "recentlyAdded": "Nyligen tillagd",
@@ -542,6 +543,17 @@
       "MM": "%d månader",
       "y": "1 år",
       "yy": "%d år"
+    }
+  },
+  "genre": {
+    "headline": "Genre"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} album",
+    "albumCount_other": "{{count}} album",
+    "buttons": {
+      "shuffleTracks": "Blanda spår",
+      "shuffleAlbums": "Blanda album"
     }
   }
 }

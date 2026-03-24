@@ -17,7 +17,8 @@
     "podcasts": "Podcasty",
     "miniSearch": "Hledat",
     "radios": "Rádiové stanice",
-    "artists": "Umělci"
+    "artists": "Umělci",
+    "genres": "Žánry"
   },
   "menu": {
     "language": "Jazyk",
@@ -478,6 +479,19 @@
     },
     "emptyPage": {
       "message": "Nebyly přidány žádné podcasty"
+    }
+  },
+  "genre": {
+    "headline": "Žánr"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} album",
+    "albumCount_few": "{{count}} alba",
+    "albumCount_many": "{{count}} alb",
+    "albumCount_other": "{{count}} alba",
+    "buttons": {
+      "shuffleTracks": "Náhodné skladby",
+      "shuffleAlbums": "Náhodná alba"
     }
   }
 }

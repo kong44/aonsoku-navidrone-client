@@ -11,7 +11,8 @@
     "favorites": "Favoriten",
     "playlists": "Wiedergabelisten",
     "emptyPlaylist": "Noch keine Wiedergabelisten erstellt",
-    "podcasts": "Podcasts"
+    "podcasts": "Podcasts",
+    "genres": "Genres"
   },
   "theme": {
     "nuclear-dark": "Nuclear Dark",
@@ -759,6 +760,17 @@
     "emptyPage": {
       "description": "Es sieht so aus, als noch keine Podcasts hinzugefügt wurden. Füge oberhalb einen hinzu!",
       "message": "Kein Podcast hinzugefügt"
+    }
+  },
+  "genre": {
+    "headline": "Genre"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} Album",
+    "albumCount_other": "{{count}} Alben",
+    "buttons": {
+      "shuffleTracks": "Titel zufällig",
+      "shuffleAlbums": "Alben zufällig"
     }
   }
 }

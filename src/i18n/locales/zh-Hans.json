@@ -17,7 +17,8 @@
     "favorites": "收藏夹",
     "search": "搜索…",
     "miniSearch": "搜索",
-    "podcasts": "播客"
+    "podcasts": "播客",
+    "genres": "流派"
   },
   "menu": {
     "about": "关于",
@@ -732,6 +733,17 @@
         "description": "请尝试添加更多播客。",
         "goToPodcasts": "前往播客"
       }
+    }
+  },
+  "genre": {
+    "headline": "流派"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} 张专辑",
+    "albumCount_other": "{{count}} 张专辑",
+    "buttons": {
+      "shuffleTracks": "随机曲目",
+      "shuffleAlbums": "随机专辑"
     }
   }
 }

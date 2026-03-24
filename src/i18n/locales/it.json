@@ -12,6 +12,7 @@
     "albums": "Album",
     "songs": "Brani",
     "podcasts": "Podcast",
+    "genres": "Generi",
     "emptyPlaylist": "Nessuna playlist creata",
     "miniSearch": "Cerca",
     "library": "Libreria",
@@ -190,6 +191,17 @@
     "beta": "Beta",
     "showDetails": "Mostra dettagli",
     "seeMore": "Per saperne di più"
+  },
+  "genre": {
+    "headline": "Genere"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} album",
+    "albumCount_other": "{{count}} album",
+    "buttons": {
+      "shuffleTracks": "Tracce casuali",
+      "shuffleAlbums": "Album casuali"
+    }
   },
   "favorites": {
     "noSongList": "Non hai ancora aggiunto brani ai preferiti!"

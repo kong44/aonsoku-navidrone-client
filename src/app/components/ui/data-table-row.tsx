@@ -12,7 +12,8 @@ interface RowProps<TData> extends ComponentPropsWithoutRef<'div'> {
   isPrevRowSelected: (rowIndex: number) => boolean
   isNextRowSelected: (rowIndex: number) => boolean
   variant?: 'classic' | 'modern'
-  dataType?: 'song' | 'artist' | 'playlist' | 'radio'
+  dataType?: 'song' | 'artist' | 'playlist' | 'radio' | 'genre'
+  clickable?: boolean
 }
 
 const MemoContextMenuProvider = memo(ContextMenuProvider)
@@ -24,6 +25,7 @@ export function TableRow<TData>({
   contextMenuOptions,
   variant,
   dataType,
+  clickable,
   isPrevRowSelected,
   isNextRowSelected,
   ...props
@@ -59,6 +61,7 @@ export function TableRow<TData>({
             'rounded-b-md',
           isModern && !row.getIsSelected() && 'rounded-md',
           'hover:bg-foreground/20 data-[state=selected]:bg-foreground/30',
+          clickable && 'cursor-pointer',
           isClassic && 'border-b',
           isRowSongActive && isModern && 'row-active bg-foreground/20',
         )}

@@ -70,7 +70,8 @@ interface DataTableProps<TData, TValue> {
   showHeader?: boolean
   showDiscNumber?: boolean
   variant?: 'classic' | 'modern'
-  dataType?: 'song' | 'artist' | 'playlist' | 'radio'
+  dataType?: 'song' | 'artist' | 'playlist' | 'radio' | 'genre'
+  onRowClick?: (row: Row<TData>) => void
 }
 
 let isTap = false
@@ -91,6 +92,7 @@ export function DataTable<TData, TValue>({
   showDiscNumber = false,
   variant = 'classic',
   dataType = 'song',
+  onRowClick,
 }: DataTableProps<TData, TValue>) {
   const { t } = useTranslation()
   const newColumns = columns.filter((column) => {
@@ -293,13 +295,17 @@ export function DataTable<TData, TValue>({
   const handleClicks = useCallback(
     (e: MouseEvent<HTMLDivElement>, row: Row<TData>) => {
       if (e.nativeEvent.button === MouseButton.Left) {
-        handleLeftClick(e, row)
+        if (onRowClick) {
+          onRowClick(row)
+        } else {
+          handleLeftClick(e, row)
+        }
       }
       if (e.nativeEvent.button === MouseButton.Right) {
         handleRightClick(row)
       }
     },
-    [handleLeftClick, handleRightClick],
+    [handleLeftClick, handleRightClick, onRowClick],
   )
 
   const handleRowDbClick = useCallback(
@@ -452,6 +458,7 @@ export function DataTable<TData, TValue>({
                       isNextRowSelected={isNextRowSelected}
                       variant={variant}
                       dataType={dataType}
+                      clickable={!!onRowClick}
                       onClick={(e) => handleClicks(e, row)}
                       onDoubleClick={(e) => handleRowDbClick(e, row)}
                       onTouchStart={handleTouchStart}

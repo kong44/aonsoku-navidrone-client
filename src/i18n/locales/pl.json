@@ -207,7 +207,8 @@
     "artists": "Wykonawcy",
     "playlists": "Playlisty",
     "emptyPlaylist": "Nie utworzono jeszcze playlist",
-    "favorites": "Ulubione"
+    "favorites": "Ulubione",
+    "genres": "Gatunki"
   },
   "playlist": {
     "headline": "Playlista",
@@ -783,5 +784,18 @@
   "warnings": {
     "songError": "Nie można odtworzyć piosenki, sprawdź Serwer!",
     "reload": "Piosenka jest odtwarzana!\nCzy na pewno chcesz odświeżyć stronę?"
+  },
+  "genre": {
+    "headline": "Gatunek"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} album",
+    "albumCount_few": "{{count}} albumy",
+    "albumCount_many": "{{count}} albumów",
+    "albumCount_other": "{{count}} albumów",
+    "buttons": {
+      "shuffleTracks": "Losowe utwory",
+      "shuffleAlbums": "Losowe albumy"
+    }
   }
 }

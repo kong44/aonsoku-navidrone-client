@@ -16,7 +16,8 @@
     "playlists": "Çalma Listeleri",
     "radios": "Radyo İstasyonları",
     "podcasts": "Podcastler",
-    "emptyPlaylist": "Henüz çalma listesi oluşturulmadı"
+    "emptyPlaylist": "Henüz çalma listesi oluşturulmadı",
+    "genres": "Türler"
   },
   "menu": {
     "language": "Dil",
@@ -723,6 +724,17 @@
       "MM": "%d ay",
       "y": "1 yıl",
       "yy": "%d yıl"
+    }
+  },
+  "genre": {
+    "headline": "Tür"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} albüm",
+    "albumCount_other": "{{count}} albüm",
+    "buttons": {
+      "shuffleTracks": "Parçaları karıştır",
+      "shuffleAlbums": "Albümleri karıştır"
     }
   }
 }

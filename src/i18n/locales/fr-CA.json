@@ -441,7 +441,8 @@
     "search": "Recherche…",
     "miniSearch": "Recherche",
     "library": "Bibliothèque",
-    "artists": "Artistes"
+    "artists": "Artistes",
+    "genres": "Genres"
   },
   "menu": {
     "language": "Langue",
@@ -737,5 +738,16 @@
     "clear": "Vider la file d'attente",
     "close": "Fermer la file d'attente",
     "open": "Ouvrir la file d'attente"
+  },
+  "genre": {
+    "headline": "Genre"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} album",
+    "albumCount_other": "{{count}} albums",
+    "buttons": {
+      "shuffleTracks": "Pistes aléatoires",
+      "shuffleAlbums": "Albums aléatoires"
+    }
   }
 }

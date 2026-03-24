@@ -17,6 +17,7 @@
     "playlists": "Playlists",
     "radios": "Radios",
     "podcasts": "Podcasts",
+    "genres": "Genres",
     "emptyPlaylist": "No playlists created yet"
   },
   "menu": {
@@ -185,6 +186,17 @@
     },
     "table": {
       "discNumber": "Disc {{number}}"
+    }
+  },
+  "genre": {
+    "headline": "Genre"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} album",
+    "albumCount_other": "{{count}} albums",
+    "buttons": {
+      "shuffleTracks": "Shuffle Tracks",
+      "shuffleAlbums": "Shuffle Albums"
     }
   },
   "favorites": {

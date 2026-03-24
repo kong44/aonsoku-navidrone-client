@@ -17,7 +17,8 @@
     "playlists": "Listas de reproducción",
     "radios": "Radios",
     "emptyPlaylist": "Aún no se han creado listas de reproducción",
-    "podcasts": "Podcasts"
+    "podcasts": "Podcasts",
+    "genres": "Géneros"
   },
   "menu": {
     "language": "Idioma",
@@ -715,5 +716,16 @@
       }
     },
     "label": "Configuración"
+  },
+  "genre": {
+    "headline": "Género"
+  },
+  "genres": {
+    "albumCount_one": "{{count}} álbum",
+    "albumCount_other": "{{count}} álbumes",
+    "buttons": {
+      "shuffleTracks": "Canciones aleatorias",
+      "shuffleAlbums": "Álbumes aleatorios"
+    }
   }
 }
