@@ -5,6 +5,11 @@ import { ContextMenuProvider } from '@/app/components/table/context-menu'
 import { usePlayerCurrentSong } from '@/store/player.store'
 import { ColumnDefType } from '@/types/react-table/columnDef'
 
+export const TABLE_ROW_SIZES = {
+  DEFAULT: 56,
+  WITH_DISK: 112,
+}
+
 interface RowProps<TData> extends ComponentPropsWithoutRef<'div'> {
   index: number
   row: Row<TData>
