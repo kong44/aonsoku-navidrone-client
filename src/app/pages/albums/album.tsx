@@ -141,6 +141,7 @@ export default function Album() {
           columnFilter={columnsToShow}
           showDiscNumber={true}
           variant="modern"
+          enableVirtualization={true}
         />
 
         {albumComment && <AlbumComment comment={albumComment} />}
