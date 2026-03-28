@@ -274,6 +274,7 @@ export const usePlayerStore = createWithEqualityFn<IPlayerContext>()(
                   state.playerState.isPlaying = true
                   state.songlist.radioList = []
                   state.songlist.podcastList = []
+                  state.playerState.playbackContext.source = null
                 })
               }
             },
