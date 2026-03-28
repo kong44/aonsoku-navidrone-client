@@ -946,59 +946,6 @@ export const usePlayerStore = createWithEqualityFn<IPlayerContext>()(
                 state.settings.colors.bigPlayer.blur.value = value
               })
             },
-            isPlaylistActive: (playlistId: string) => {
-              const { source } = get().playerState.playbackContext
-
-              if (!source) return false
-
-              return source.type === 'playlist' && source.id === playlistId
-            },
-            isPlaylistPlaying: (playlistId: string) => {
-              const { source } = get().playerState.playbackContext
-              const { isPlaying } = get().playerState
-
-              if (!source) return false
-
-              const isActive =
-                source.type === 'playlist' && source.id === playlistId
-
-              return isActive && isPlaying
-            },
-            isArtistActive: (artistId: string) => {
-              const { source } = get().playerState.playbackContext
-
-              if (!source) return false
-
-              return source.type === 'artist' && source.id === artistId
-            },
-            isArtistPlaying: (artistId: string) => {
-              const { source } = get().playerState.playbackContext
-              const { isPlaying } = get().playerState
-
-              if (!source) return false
-
-              const isActive =
-                source.type === 'artist' && source.id === artistId
-
-              return isActive && isPlaying
-            },
-            isAlbumActive: (albumId: string) => {
-              const { source } = get().playerState.playbackContext
-
-              if (!source) return false
-
-              return source.type === 'album' && source.id === albumId
-            },
-            isAlbumPlaying: (albumId: string) => {
-              const { source } = get().playerState.playbackContext
-              const { isPlaying } = get().playerState
-
-              if (!source) return false
-
-              const isActive = source.type === 'album' && source.id === albumId
-
-              return isActive && isPlaying
-            },
           },
         })),
         { name: 'player_store' },
@@ -1362,3 +1309,55 @@ export const usePlayerFullscreen = () =>
 
 export const usePlayerContext = () =>
   usePlayerStore((state) => state.playerState.playbackContext)
+
+export const useIsPlaylistPlaying = (playlistId: string) => {
+  const { source } = usePlayerStore(
+    (state) => state.playerState.playbackContext,
+  )
+  const isPlaying = usePlayerStore((state) => state.playerState.isPlaying)
+
+  if (!source) return { isPlaylistActive: false, isPlaylistPlaying: false }
+
+  const isPlaylistActive =
+    source.type === 'playlist' && source.id === playlistId
+  const isPlaylistPlaying = isPlaylistActive && isPlaying
+
+  return {
+    isPlaylistActive,
+    isPlaylistPlaying,
+  }
+}
+
+export const useIsAlbumPlaying = (albumId: string) => {
+  const { source } = usePlayerStore(
+    (state) => state.playerState.playbackContext,
+  )
+  const isPlaying = usePlayerStore((state) => state.playerState.isPlaying)
+
+  if (!source) return { isAlbumActive: false, isAlbumPlaying: false }
+
+  const isAlbumActive = source.type === 'album' && source.id === albumId
+  const isAlbumPlaying = isAlbumActive && isPlaying
+
+  return {
+    isAlbumActive,
+    isAlbumPlaying,
+  }
+}
+
+export const isArtistPlaying = (artistId: string) => {
+  const { source } = usePlayerStore(
+    (state) => state.playerState.playbackContext,
+  )
+  const isPlaying = usePlayerStore((state) => state.playerState.isPlaying)
+
+  if (!source) return { isArtistActive: false, isArtistPlaying: false }
+
+  const isArtistActive = source.type === 'artist' && source.id === artistId
+  const isArtistPlaying = isArtistActive && isPlaying
+
+  return {
+    isArtistActive,
+    isArtistPlaying,
+  }
+}

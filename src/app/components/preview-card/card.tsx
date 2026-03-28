@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import { Pause, Play } from 'lucide-react'
 import React, { ComponentPropsWithoutRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -57,25 +56,16 @@ function Image({ src, alt }: ImageProps) {
   )
 }
 
-interface ButtonWrapProps extends React.PropsWithChildren {
+type CardButtonProps = ComponentPropsWithoutRef<'button'> & {
   onClick: () => void
   dataTestId: string
-  isActive: boolean
 }
 
-function ButtonWrap({
-  onClick,
-  dataTestId,
-  children,
-  isActive,
-}: ButtonWrapProps) {
+function CardButton({ onClick, dataTestId, children }: CardButtonProps) {
   return (
     <div className="w-full h-full flex items-center justify-center rounded bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 absolute inset-0 z-10">
       <Button
-        className={clsx(
-          'transition-all duration-300 rounded-full w-12 h-12 z-20',
-          !isActive && 'opacity-0 group-hover:opacity-100',
-        )}
+        className="opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full w-12 h-12 z-20"
         variant="outline"
         onClick={(e) => {
           e.stopPropagation()
@@ -92,30 +82,21 @@ function ButtonWrap({
 
 interface PlayPauseButtonProps {
   onClick: () => void
-  isActive: boolean
 }
 
-function PlayButton({ onClick, isActive }: PlayPauseButtonProps) {
+function PlayButton({ onClick }: PlayPauseButtonProps) {
   return (
-    <ButtonWrap
-      dataTestId="card-play-button"
-      onClick={onClick}
-      isActive={isActive}
-    >
+    <CardButton dataTestId="card-play-button" onClick={onClick}>
       <Play className="fill-foreground" />
-    </ButtonWrap>
+    </CardButton>
   )
 }
 
-function PauseButton({ onClick, isActive }: PlayPauseButtonProps) {
+function PauseButton({ onClick }: PlayPauseButtonProps) {
   return (
-    <ButtonWrap
-      dataTestId="card-pause-button"
-      onClick={onClick}
-      isActive={isActive}
-    >
+    <CardButton dataTestId="card-pause-button" onClick={onClick}>
       <Pause className="fill-foreground" />
-    </ButtonWrap>
+    </CardButton>
   )
 }
 

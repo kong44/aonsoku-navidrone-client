@@ -1,14 +1,11 @@
 import clsx from 'clsx'
 import { memo } from 'react'
+import { EqualizerBars } from '@/app/components/icons/equalizer-bars'
 import { ImageLoader } from '@/app/components/image-loader'
 import { PreviewCard } from '@/app/components/preview-card/card'
 import { ROUTES } from '@/routes/routesList'
 import { subsonic } from '@/service/subsonic'
-import {
-  usePlayerActions,
-  usePlayerContext,
-  usePlayerStore,
-} from '@/store/player.store'
+import { useIsAlbumPlaying, usePlayerActions } from '@/store/player.store'
 import { Albums } from '@/types/responses/album'
 
 type AlbumCardProps = {
@@ -17,10 +14,9 @@ type AlbumCardProps = {
 
 function AlbumCard({ album }: AlbumCardProps) {
   const { setSongList, togglePlayPause } = usePlayerActions()
-  const { source } = usePlayerContext()
-  const isPlaying = usePlayerStore((state) => state.playerState.isPlaying)
+  const { isAlbumActive, isAlbumPlaying } = useIsAlbumPlaying(album.id)
 
-  async function handlePlayAlbum() {
+  async function playCurrentAlbum() {
     const response = await subsonic.albums.getOne(album.id)
 
     if (response) {
@@ -32,32 +28,43 @@ function AlbumCard({ album }: AlbumCardProps) {
     }
   }
 
-  const isCurrentAlbumActive =
-    source?.type === 'album' && source.id === album.id
-  const isAlbumPlayingNow = isPlaying && isCurrentAlbumActive
+  function handlePlayPause() {
+    if (isAlbumActive) {
+      togglePlayPause()
+    } else {
+      playCurrentAlbum()
+    }
+  }
 
   return (
-    <PreviewCard.Root className={clsx(isAlbumPlayingNow && 'border-primary')}>
+    <PreviewCard.Root>
       <PreviewCard.ImageWrapper link={ROUTES.ALBUM.PAGE(album.id)}>
         <ImageLoader id={album.coverArt} type="album" size={300}>
           {(src) => <PreviewCard.Image src={src} alt={album.name} />}
         </ImageLoader>
-        {isAlbumPlayingNow ? (
-          <PreviewCard.PauseButton
-            isActive={isCurrentAlbumActive}
-            onClick={togglePlayPause}
-          />
+        {isAlbumPlaying ? (
+          <PreviewCard.PauseButton onClick={handlePlayPause} />
         ) : (
-          <PreviewCard.PlayButton
-            isActive={isCurrentAlbumActive}
-            onClick={handlePlayAlbum}
-          />
+          <PreviewCard.PlayButton onClick={handlePlayPause} />
         )}
       </PreviewCard.ImageWrapper>
       <PreviewCard.InfoWrapper>
-        <PreviewCard.Title link={ROUTES.ALBUM.PAGE(album.id)}>
-          {album.name}
-        </PreviewCard.Title>
+        <div
+          className={clsx(
+            'flex items-center gap-1',
+            isAlbumPlaying && 'text-primary',
+          )}
+        >
+          {isAlbumPlaying && (
+            <EqualizerBars
+              size={14}
+              className={clsx('mb-0.5', isAlbumPlaying && 'text-primary')}
+            />
+          )}
+          <PreviewCard.Title link={ROUTES.ALBUM.PAGE(album.id)}>
+            {album.name}
+          </PreviewCard.Title>
+        </div>
         <PreviewCard.Subtitle
           enableLink={album.artistId !== undefined}
           link={ROUTES.ARTIST.PAGE(album.artistId ?? '')}
