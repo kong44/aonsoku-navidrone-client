@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { Actions } from '@/app/components/actions'
 import {
+  useIsPlaylistPlaying,
   usePlayerActions,
-  usePlayerContext,
   usePlayerStore,
 } from '@/store/player.store'
 import { PlaybackSource } from '@/types/playerContext'
@@ -16,15 +16,12 @@ interface PlaylistButtonsProps {
 export function PlaylistButtons({ playlist }: PlaylistButtonsProps) {
   const { t } = useTranslation()
   const { setSongList, togglePlayPause, toggleShuffle } = usePlayerActions()
-  const { source } = usePlayerContext()
-  const isPlaying = usePlayerStore((state) => state.playerState.isPlaying)
+  const { isPlaylistActive, isPlaylistPlaying } = useIsPlaylistPlaying(
+    playlist.id,
+  )
   const isShuffleActive = usePlayerStore(
     (state) => state.playerState.isShuffleActive,
   )
-
-  const isPlaylistActive =
-    (source && source.type === 'playlist' && source.id === playlist.id) ?? false
-  const isPlaylistPlaying = isPlaylistActive && isPlaying
 
   const buttonsTooltips = {
     play: () => {
