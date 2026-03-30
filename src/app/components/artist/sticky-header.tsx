@@ -45,7 +45,7 @@ export function ArtistStickyHeader({ artist }: ArtistStickyHeaderProps) {
   }
 
   return (
-    <StickyHeader style={{ backgroundColor: bgColor }}>
+    <StickyHeader key={artist.id} style={{ backgroundColor: bgColor }}>
       <StickyHeaderButton
         isPlaying={isArtistPlaying}
         onClick={handlePlayButton}

@@ -39,7 +39,7 @@ export function PlaylistStickyHeader({ playlist }: PlaylistStickyHeaderProps) {
   }
 
   return (
-    <StickyHeader style={{ backgroundColor: bgColor }}>
+    <StickyHeader key={playlist.id} style={{ backgroundColor: bgColor }}>
       <StickyHeaderButton
         isPlaying={isPlaylistPlaying}
         onClick={handlePlayButton}

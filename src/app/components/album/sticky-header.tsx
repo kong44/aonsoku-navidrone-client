@@ -37,7 +37,7 @@ export function AlbumStickyHeader({ album }: AlbumStickyHeaderProps) {
   }
 
   return (
-    <StickyHeader style={{ backgroundColor: bgColor }}>
+    <StickyHeader key={album.id} style={{ backgroundColor: bgColor }}>
       <StickyHeaderButton
         isPlaying={isAlbumPlaying}
         onClick={handlePlayButton}
