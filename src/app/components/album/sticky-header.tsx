@@ -11,11 +11,11 @@ import { useIsAlbumPlaying, usePlayerActions } from '@/store/player.store'
 import { PlaybackSource } from '@/types/playerContext'
 import { SingleAlbum } from '@/types/responses/album'
 
-interface StickyAlbumHeaderProps {
+interface AlbumStickyHeaderProps {
   album: SingleAlbum
 }
 
-export function StickyAlbumHeader({ album }: StickyAlbumHeaderProps) {
+export function AlbumStickyHeader({ album }: AlbumStickyHeaderProps) {
   const { bgColor, handleLoadImage, handleError } = useAlbumColor(
     STICKY_HEADER_IMAGE_ID,
   )
@@ -47,6 +47,7 @@ export function StickyAlbumHeader({ album }: StickyAlbumHeaderProps) {
         <StickyHeaderImage
           id={album.coverArt}
           type="album"
+          size="700"
           alt={album.name}
           onLoad={handleLoadImage}
           onError={handleError}

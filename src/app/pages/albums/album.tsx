@@ -4,7 +4,7 @@ import { AlbumComment } from '@/app/components/album/comment'
 import ImageHeader from '@/app/components/album/image-header'
 import { AlbumInfo } from '@/app/components/album/info'
 import { RecordLabelsInfo } from '@/app/components/album/record-labels'
-import { StickyAlbumHeader } from '@/app/components/album/sticky-header'
+import { AlbumStickyHeader } from '@/app/components/album/sticky-header'
 import { AlbumFallback } from '@/app/components/fallbacks/album-fallbacks'
 import { PreviewListFallback } from '@/app/components/fallbacks/home-fallbacks'
 import { BadgesData } from '@/app/components/header-info'
@@ -117,7 +117,7 @@ export default function Album() {
 
   return (
     <div className="w-full relative">
-      <StickyAlbumHeader album={album} />
+      <AlbumStickyHeader album={album} />
 
       <ImageHeader
         type={t('album.headline')}
